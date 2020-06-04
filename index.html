@@ -7,43 +7,18 @@
 </head>
 <body>
     <h1>Deviner un nombre</h1>
-    <p>Nous avons généré un nombre aléatoire entre 1 et 100, tentez de le deviner en 10 tours maximum</p>
-    <p>Pour chaque tentative, nous vous dirons si votre estimation est trop ou pas élevée.</p>
-    <p>Bonne partie et que la force soit avec vous.</p>
 
-    <div class="proposal"></div>
+    <p>Nous avons sélectionné un nombre aléatoire entre 1 et 100. Voyez si vous pouvez le deviner en 10 tours ou moins. Nous vous dirons si votre estimation était trop élevée ou trop faible.</p>
 
-    <script>
-    
-    //1-Générer un nombre aléatoire entre 1 et 100
-    
-    //2-Stocker le nbre de tours déjà joués
+    <div class="form">
+      <label for="guessField">Entrée un nombre </label><input type="text" id="guessField" class="guessField">
+      <input type="submit" value="Submit guess" class="guessSubmit">
+    </div>
 
-    //3-Créer la boite de saisie du joueur
-
-    //4-Vérifier si le nombre saisi est correct
-
-    /*5-Si correct:
-    - Afficher un message de félicitations
-    - Empêcher que le joueur saisisse de nouveau un nombre
-    - Afficher le nombre de tours
-    - Demander au joueur s'il veut recommencer une partie*/
-
-    /*6- Si faux:
-    - Informer le joueur que sa proposition est fausse
-    - Dire au joueur si il est au-dessus ou en-dessous du chiffre a deviner
-    - Permettre au joueur de rentrer une nouvelle proposition
-    - Incrémenter le compteur de tour de 1*/
-
-    /*7- Si faux est que le joueur n'a plus de tour à jouer:
-    - Informer le joueur qu'il a perdu et que la partie est finie
-    - Empêcher le joueur de saisir un nouveau nombre
-    - Demander au joueur s'il veut recommencer une partie*/
-
-    //8- Une fois le jeu redemarré, s'assurer que la logique du jeu et l'interface utilisateur sont complétement réinitialisées.
-
-    //9- Revenir à l'étape 1
-    
-    </script>
+    <div class="resultParas">
+      <p class="guesses"></p>
+      <p class="lastResult"></p>
+      <p class="lowOrHi"></p>
+    </div>
 </body>
 </html>
