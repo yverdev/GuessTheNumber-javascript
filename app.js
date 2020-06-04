@@ -21,6 +21,7 @@
       9- Return to step 1*/
     
     // variables required for data storage
+    let randomNumber = Math.floor(Math.random()*100) + 1;
     let guesses = document.querySelector('.guesses');
     let lastResult = document.querySelector('.lastResult');
     let lowOrhi = document.querySelector('.lowOrHi');
@@ -30,7 +31,6 @@
     let guessCount = 1;
     let restButton;
     
-    let randomNumber = Math.floor(Math.random()*100) + 1;
 
     function checkGuess(){
         
@@ -38,6 +38,7 @@
         if (guessCount === 1) {
           guesses.textContent = 'Propositions précédentes : ';
         }
+
         guesses.textContent += userGuess + ' ';
        
         if (userGuess === randomNumber) {
@@ -62,6 +63,7 @@
         guessField.value = '';
         guessField.focus();
       }
+      guessSubmit.addEventListener('click', checkGuess);
 
       function setGameOver() {
         guessField.disabled = true;
@@ -72,7 +74,21 @@
         resetButton.addEventListener('click', resetGame);
       }
 
+      function resetGame() {
+        guessCount = 1;
+        const resetParas = document.querySelectorAll('.resultParas p');
+        for(let i = 0 ; i < resetParas.length ; i++) {
+          resetParas[i].textContent = '';
+        }
 
+        resetButton.parentNode.removeChild(resetButton);
+        guessField.disabled = false;
+        guessSubmit.disabled = false;
+        guessField.value = '';
+        guessField.focus();
+        lastResult.style.backgroundColor = 'white';
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+      }
 
 
       
